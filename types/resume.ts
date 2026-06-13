@@ -7,6 +7,7 @@ export interface PersonalInfo {
   github: string;
 }
 
+
 export interface ResumeState {
   personalInfo: PersonalInfo;
   summary: string;
