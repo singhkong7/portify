@@ -2,7 +2,91 @@ export const templates = [
   {
     id: 1,
     name: "Professional",
-    image:
-      "https://placehold.co/400x500",
+    image: "https://picsum.photos/400/600?random=1",
+    category: "Professional",
+  },
+  {
+    id: 2,
+    name: "Modern",
+    image: "https://picsum.photos/400/600?random=2",
+    category: "Professional",
+  },
+  {
+    id: 3,
+    name: "Minimal",
+    image: "https://picsum.photos/400/600?random=3",
+    category: "Minimal",
+  },
+  {
+    id: 4,
+    name: "Executive",
+    image: "https://picsum.photos/400/600?random=4",
+    category: "Professional",
+  },
+  {
+    id: 5,
+    name: "Creative",
+    image: "https://picsum.photos/400/600?random=5",
+    category: "Creative",
+  },
+  {
+    id: 6,
+    name: "Elegant",
+    image: "https://picsum.photos/400/600?random=6",
+    category: "Professional",
+  },
+  {
+    id: 7,
+    name: "Corporate",
+    image: "https://picsum.photos/400/600?random=7",
+    category: "Professional",
+  },
+  {
+    id: 8,
+    name: "Startup",
+    image: "https://picsum.photos/400/600?random=8",
+    category: "Modern",
+  },
+  {
+    id: 9,
+    name: "Tech",
+    image: "https://picsum.photos/400/600?random=9",
+    category: "Technology",
+  },
+  {
+    id: 10,
+    name: "Designer",
+    image: "https://picsum.photos/400/600?random=10",
+    category: "Creative",
+  },
+  {
+    id: 11,
+    name: "Developer",
+    image: "https://picsum.photos/400/600?random=11",
+    category: "Technology",
+  },
+  {
+    id: 12,
+    name: "Compact",
+    image: "https://picsum.photos/400/600?random=12",
+    category: "Minimal",
+  },
+  {
+    id: 13,
+    name: "Timeline",
+    image: "https://picsum.photos/400/600?random=13",
+    category: "Modern",
+  },
+  {
+    id: 14,
+    name: "Portfolio",
+    image: "https://picsum.photos/400/600?random=14",
+    category: "Creative",
+  },
+  {
+    id: 15,
+    name: "Premium",
+    image: "https://picsum.photos/400/600?random=15",
+    category: "Professional",
   },
 ];

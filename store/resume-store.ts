@@ -1,49 +1,59 @@
 import { create } from "zustand";
 
-interface ResumeStore {
+export const useResumeStore = create((set) => ({
   personalInfo: {
-    name: string;
-    email: string;
-    phone: string;
-    location: string;
-    linkedin: string;
-    github: string;
-  };
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    linkedin: "",
+    github: "",
+  },
 
-  summary: string;
+  summary: "",
 
-  updatePersonalInfo: (
-    field: string,
-    value: string
-  ) => void;
+  skills: [],
 
-  setSummary: (summary: string) => void;
-}
+  experience: [],
 
-export const useResumeStore = create<ResumeStore>(
-  (set) => ({
-    personalInfo: {
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      linkedin: "",
-      github: "",
-    },
+  education: [],
 
-    summary: "",
+  updatePersonalInfo: (field: string, value: string) =>
+    set((state: unknown) => ({
+      personalInfo: {
+        ...state.personalInfo,
+        [field]: value,
+      },
+    })),
 
-    updatePersonalInfo: (field, value) =>
-      set((state) => ({
-        personalInfo: {
-          ...state.personalInfo,
-          [field]: value,
-        },
-      })),
+  setSummary: (summary: string) =>
+    set({ summary }),
 
-    setSummary: (summary) =>
-      set({
-        summary,
-      }),
-  })
-);
+  addSkill: (skill: string) =>
+    set((state: any) => ({
+      skills: [...state.skills, skill],
+    })),
+
+  removeSkill: (skill: string) =>
+    set((state: any) => ({
+      skills: state.skills.filter(
+        (s: string) => s !== skill
+      ),
+    })),
+
+  addExperience: (exp: any) =>
+    set((state: any) => ({
+      experience: [
+        ...state.experience,
+        exp,
+      ],
+    })),
+
+  addEducation: (edu: any) =>
+    set((state: any) => ({
+      education: [
+        ...state.education,
+        edu,
+      ],
+    })),
+}));

@@ -1,6 +1,9 @@
 "use client";
 
 import { useResumeStore } from "@/store/resume-store";
+import SkillsSection from "./SkillsSection";
+import ExperienceSection from "./ExperienceSection";
+import EducationSection from "./EducationSection";
 
 export default function ResumeForm() {
   const {
@@ -9,7 +12,7 @@ export default function ResumeForm() {
   } = useResumeStore();
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <input
         placeholder="Name"
         value={personalInfo.name}
@@ -19,7 +22,7 @@ export default function ResumeForm() {
             e.target.value
           )
         }
-        className="w-full border p-3 rounded"
+        className="border p-3 w-full rounded"
       />
 
       <input
@@ -31,7 +34,7 @@ export default function ResumeForm() {
             e.target.value
           )
         }
-        className="w-full border p-3 rounded"
+        className="border p-3 w-full rounded"
       />
 
       <input
@@ -43,8 +46,14 @@ export default function ResumeForm() {
             e.target.value
           )
         }
-        className="w-full border p-3 rounded"
+        className="border p-3 w-full rounded"
       />
+
+      <ExperienceSection />
+
+      <EducationSection />
+
+      <SkillsSection />
     </div>
   );
 }

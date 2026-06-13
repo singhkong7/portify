@@ -1,3 +1,15 @@
+export interface Experience {
+  company: string;
+  role: string;
+  duration: string;
+}
+
+export interface Education {
+  college: string;
+  degree: string;
+  year: string;
+}
+
 export interface PersonalInfo {
   name: string;
   email: string;
@@ -7,9 +19,10 @@ export interface PersonalInfo {
   github: string;
 }
 
-
 export interface ResumeState {
   personalInfo: PersonalInfo;
   summary: string;
   skills: string[];
+  experience: Experience[];
+  education: Education[];
 }
