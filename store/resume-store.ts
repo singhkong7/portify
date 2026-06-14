@@ -1,6 +1,26 @@
 import { create } from "zustand";
+import {
+  Experience,
+  Education,
+  PersonalInfo,
+} from "@/types/resume";
 
-export const useResumeStore = create((set) => ({
+export interface ResumeStore {
+  personalInfo: PersonalInfo;
+  summary: string;
+  skills: string[];
+  experience: Experience[];
+  education: Education[];
+  updatePersonalInfo: (field: keyof PersonalInfo, value: string) => void;
+  setSummary: (summary: string) => void;
+  addSkill: (skill: string) => void;
+  removeSkill: (skill: string) => void;
+  addExperience: (exp: Experience) => void;
+  addEducation: (edu: Education) => void;
+}
+
+export const useResumeStore = create<ResumeStore>((set) => ({
+
   personalInfo: {
     name: "",
     email: "",
@@ -18,42 +38,34 @@ export const useResumeStore = create((set) => ({
 
   education: [],
 
-  updatePersonalInfo: (field: string, value: string) =>
-    set((state: unknown) => ({
+  updatePersonalInfo: (field, value) =>
+    set((state) => ({
       personalInfo: {
         ...state.personalInfo,
         [field]: value,
       },
     })),
 
-  setSummary: (summary: string) =>
-    set({ summary }),
+  setSummary: (summary) => set({ summary }),
 
-  addSkill: (skill: string) =>
-    set((state: any) => ({
+  addSkill: (skill) =>
+    set((state) => ({
       skills: [...state.skills, skill],
     })),
 
-  removeSkill: (skill: string) =>
-    set((state: any) => ({
-      skills: state.skills.filter(
-        (s: string) => s !== skill
-      ),
+  removeSkill: (skill) =>
+    set((state) => ({
+      skills: state.skills.filter((s) => s !== skill),
     })),
 
-  addExperience: (exp: any) =>
-    set((state: any) => ({
-      experience: [
-        ...state.experience,
-        exp,
-      ],
+  addExperience: (exp) =>
+    set((state) => ({
+      experience: [...state.experience, exp],
     })),
 
-  addEducation: (edu: any) =>
-    set((state: any) => ({
-      education: [
-        ...state.education,
-        edu,
-      ],
+  addEducation: (edu) =>
+    set((state) => ({
+      education: [...state.education, edu],
     })),
+
 }));
